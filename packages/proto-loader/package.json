@@ -1,5 +1,5 @@
 {
-  "name": "proto-loader",
+  "name": "@grpc/proto-loader",
   "version": "0.5.3",
   "author": "Google Inc.",
   "contributors": [
@@ -39,7 +39,6 @@
     "build/src/*.js"
   ],
   "dependencies": {
-    "@types/mocha": "^7.0.2",
     "lodash.camelcase": "^4.3.0",
     "protobufjs": "^6.8.6"
   },
