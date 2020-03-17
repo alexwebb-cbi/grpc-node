@@ -377,11 +377,16 @@ export function loadSync(
     'google',
     'protobuf'
   );
+  const existsSync = require('fs').existsSync
 
   for (const proto of wellKnownProtos) {
-    const file = path.join(sourceDir, `${proto}.proto`);
+    let oldFile = ''
+    let file = path.join(sourceDir, `${proto}.proto`);
+    while (!existsSync(file) && file !== oldFile) {
+        oldFile = file
+        file = file.replace('../', '')
+    }
     const descriptor = Protobuf.loadSync(file).toJSON();
-
     Protobuf.common(
       proto,
       (descriptor.nested!.google as Protobuf.INamespace).nested!
