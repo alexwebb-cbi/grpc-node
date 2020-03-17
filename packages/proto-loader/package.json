@@ -13,6 +13,7 @@
   "main": "build/src/index.js",
   "typings": "build/src/index.d.ts",
   "scripts": {
+    "install": "npm run compile",
     "build": "npm run compile",
     "clean": "gts clean",
     "compile": "tsc -p .",
