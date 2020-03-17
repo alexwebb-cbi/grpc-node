@@ -387,6 +387,7 @@ export function loadSync(
         file = file.replace('../', '')
     }
     const descriptor = Protobuf.loadSync(file).toJSON();
+
     Protobuf.common(
       proto,
       (descriptor.nested!.google as Protobuf.INamespace).nested!
